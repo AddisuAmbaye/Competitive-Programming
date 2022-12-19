@@ -6,11 +6,12 @@ var reverseString = function (s) {
   let left = 0, right = s.length - 1;
 
   while (left < right) {
-  
-      [s[right],s[left] ]= [s[left],s[right]]
+    const temp = s[left]
+    s[left] = s[right]
+    s[right] = temp
 
     left++
     right--
   }
-   
+    return s
 };
