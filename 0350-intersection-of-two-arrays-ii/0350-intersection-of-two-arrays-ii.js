@@ -5,21 +5,15 @@
  */
 
 
-var intersect = function(nums1, nums2) {
-    let base, sub
-    if(nums1.length > nums2.length ) {
-        base = nums1
-        sub = nums2
-    }else {
-        base = nums2
-        sub = nums1
+function intersect(nums1, nums2) {
+    const map = {}, res = [];
+    for (let i = 0; i < nums1.length; i++) {
+        map[nums1[i]] == null ? map[nums1[i]] = 1 : map[nums1[i]]++;
     }
-    let res = [] 
-    for( i = 0 ; i < sub.length ; i++){
-        if(base.includes(sub[i])){
-            res.push(sub[i])
-            base[base.indexOf(sub[i])] = null
+    for (let i = 0; i < nums2.length; i++) {
+        if (map[nums2[i]]-- > 0) {
+            res.push(nums2[i]);
         }
     }
-    return res
-};
+    return res;
+}
