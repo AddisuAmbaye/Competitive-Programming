@@ -9,7 +9,6 @@ var distinctAverages = function(nums) {
     nums.sort((a, b) => a - b)
     while(left < right){
        ave = (nums[left] + nums[right])/2
-    
         set.add(ave)
         left++
         right--
