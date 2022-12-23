@@ -2,14 +2,15 @@
  * @param {number[]} arr
  * @return {boolean}
  */
-var checkIfExist = function(arr) {
-    arr.sort((a,b) => b - a)
-       for(i = 0; i < arr.length; i++){
-           for(j = i + 1; j < arr.length; j++){
-               if(arr[i] == 2 * arr[j] || 2 *arr[i] == arr[j]){
-                   return true
-               }
-          }
-      } 
-    return false
+var checkIfExist = function (arr) {
+    let set = new Set();
+
+    for (i = 0; i < arr.length; i++) {
+        if (set.has(arr[i] * 2) || set.has(arr[i] / 2)) {
+            return true;
+        }
+        set.add(arr[i]);
+    }
+
+    return false;
 };
