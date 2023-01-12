@@ -3,17 +3,15 @@
  * @param {number[]} popped
  * @return {boolean}
  */
-const validateStackSequences = function(pushed, popped) {
-    const stack = []
-    let i = 0
-
-    for (el of pushed) {
-        stack.push(el)
-        while (stack.length != 0 && stack[stack.length - 1] === popped[i]) {
-            stack.pop()
-            i++
+var validateStackSequences = function(pushed, popped){
+      stack = []
+      j = 0
+    for(i = 0; i < pushed.length; i++){
+        stack.push(pushed[i])
+        while(stack.length > 0 && stack[stack.length - 1] == popped[j]){
+             stack.pop()
+             j++  
         }
-    }
-    
-    return pushed.length === i
-}
+    } 
+    return pushed.length == j
+};
