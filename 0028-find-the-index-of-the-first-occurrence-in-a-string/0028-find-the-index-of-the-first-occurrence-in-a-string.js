@@ -5,7 +5,6 @@
  */
 var strStr = function(haystack, needle) {
 
-    
     let i = 0;
     let s = 0;
     
