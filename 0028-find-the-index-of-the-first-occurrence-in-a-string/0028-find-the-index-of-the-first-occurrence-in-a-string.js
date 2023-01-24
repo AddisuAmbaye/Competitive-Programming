@@ -4,7 +4,7 @@
  * @return {number}
  */
 var strStr = function(haystack, needle) {
-    // if (!needle.length) return 0;
+
     
     let i = 0;
     let s = 0;
