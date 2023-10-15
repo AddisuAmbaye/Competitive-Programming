@@ -1,12 +1,18 @@
 class Solution(object):
-    def isMirror(self, left, right):
-        if not left and not right:
-            return True
-        if not left or not right:
-            return False
-        return left.val == right.val and self.isMirror(left.left, right.right) and self.isMirror(left.right, right.left)
-    
     def isSymmetric(self, root):
-        if not root:
+        """
+        :type root: TreeNode
+        :rtype: bool
+        """
+        if root is None:
             return True
-        return self.isMirror(root.left, root.right)
+        
+        return self.rootReflection(root.left, root.right)
+
+    
+    def rootReflection(self, leftroot, rightroot):
+        
+        if leftroot and rightroot:
+            return leftroot.val==rightroot.val and self.rootReflection(leftroot.left, rightroot.right) and self.rootReflection(leftroot.right, rightroot.left)
+        
+        return leftroot==rightroot
